@@ -1,0 +1,689 @@
+[
+    {
+        "id": "42771e3664113772",
+        "type": "tab",
+        "label": "Comedouro Inteligente",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "0c58508210175910",
+        "type": "group",
+        "z": "42771e3664113772",
+        "name": "Recebimento de Dados (Separado)",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#eafad3",
+            "label": true
+        },
+        "nodes": [
+            "11471254972f8186",
+            "51984f9f1444680a",
+            "338d1b96b47e7fec",
+            "f3bf5d66acdc6702",
+            "8c51a14e9e3206cd",
+            "484a9c4622cbb135",
+            "b930b08b560faddf",
+            "0ebc16d4c647b37b",
+            "a3245972a4862429",
+            "6b109fada9fe0427",
+            "4ce22055a3cd553b",
+            "bcd744fc12a80e49"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 822,
+        "h": 322
+    },
+    {
+        "id": "8f41bd8f41153558",
+        "type": "group",
+        "z": "42771e3664113772",
+        "name": "Painel Web Flexível",
+        "style": {
+            "stroke": "#3f93cf",
+            "fill": "#d1eaf9",
+            "label": true
+        },
+        "nodes": [
+            "8c09a13c51f1fc53",
+            "6e5d251091a55a2c",
+            "2293ba481dbb2717",
+            "c9a7397bbf29d187",
+            "d3a6f3f35a2e99c7",
+            "0a16a4d8238e5639"
+        ],
+        "x": 34,
+        "y": 459,
+        "w": 632,
+        "h": 182
+    },
+    {
+        "id": "b657e2b9524d0999",
+        "type": "group",
+        "z": "42771e3664113772",
+        "name": "Agendador Inteligente",
+        "style": {
+            "stroke": "#ffbf00",
+            "fill": "#fff7d1",
+            "label": true
+        },
+        "nodes": [
+            "b3e65c56453c4c2a",
+            "be416fa46e7e74da",
+            "43ba30b98d394605",
+            "b35f5c411211348a",
+            "049a2d67fccd6c15",
+            "8357ae811a27833f",
+            "f73c065a44299311",
+            "957b7290a1230eca"
+        ],
+        "x": 674,
+        "y": 439,
+        "w": 752,
+        "h": 322
+    },
+    {
+        "id": "11471254972f8186",
+        "type": "mqtt in",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Aq1 Temp",
+        "topic": "aquario1/temperatura",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "b3f3a8b4.a6f998",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "8c51a14e9e3206cd",
+                "a3245972a4862429"
+            ]
+        ]
+    },
+    {
+        "id": "51984f9f1444680a",
+        "type": "mqtt in",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Aq1 pH",
+        "topic": "aquario1/ph",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "b3f3a8b4.a6f998",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "484a9c4622cbb135",
+                "6b109fada9fe0427"
+            ]
+        ]
+    },
+    {
+        "id": "338d1b96b47e7fec",
+        "type": "mqtt in",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Aq2 Temp",
+        "topic": "aquario2/temperatura",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "b3f3a8b4.a6f998",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "b930b08b560faddf",
+                "4ce22055a3cd553b"
+            ]
+        ]
+    },
+    {
+        "id": "f3bf5d66acdc6702",
+        "type": "mqtt in",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Aq2 pH",
+        "topic": "aquario2/ph",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "b3f3a8b4.a6f998",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "0ebc16d4c647b37b",
+                "bcd744fc12a80e49"
+            ]
+        ]
+    },
+    {
+        "id": "8c51a14e9e3206cd",
+        "type": "influxdb out",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "influxdb": "dcb5e55b929bb223",
+        "name": "DB Aq1 Temp",
+        "measurement": "temperatura",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "mackenzie",
+        "bucket": "aquario",
+        "x": 750,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "484a9c4622cbb135",
+        "type": "influxdb out",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "influxdb": "dcb5e55b929bb223",
+        "name": "DB Aq1 pH",
+        "measurement": "ph",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "mackenzie",
+        "bucket": "aquario",
+        "x": 750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b930b08b560faddf",
+        "type": "influxdb out",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "influxdb": "dcb5e55b929bb223",
+        "name": "DB Aq2 Temp",
+        "measurement": "temperatura_aq2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "mackenzie",
+        "bucket": "aquario",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0ebc16d4c647b37b",
+        "type": "influxdb out",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "influxdb": "dcb5e55b929bb223",
+        "name": "DB Aq2 pH",
+        "measurement": "ph_aq2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "mackenzie",
+        "bucket": "aquario",
+        "x": 750,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a3245972a4862429",
+        "type": "change",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Salvar Temp 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "aquario1_temp",
+                "pt": "flow",
+                "to": "$number(payload)",
+                "tot": "jsonata",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b109fada9fe0427",
+        "type": "change",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Salvar pH 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "aquario1_ph",
+                "pt": "flow",
+                "to": "$number(payload)",
+                "tot": "jsonata",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ce22055a3cd553b",
+        "type": "change",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Salvar Temp 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "aquario2_temp",
+                "pt": "flow",
+                "to": "$number(payload)",
+                "tot": "jsonata",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bcd744fc12a80e49",
+        "type": "change",
+        "z": "42771e3664113772",
+        "g": "0c58508210175910",
+        "name": "Salvar pH 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "aquario2_ph",
+                "pt": "flow",
+                "to": "$number(payload)",
+                "tot": "jsonata",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c09a13c51f1fc53",
+        "type": "http in",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "GET /config",
+        "url": "/config",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "6e5d251091a55a2c"
+            ]
+        ]
+    },
+    {
+        "id": "6e5d251091a55a2c",
+        "type": "template",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "HTML Dashboard Flexível",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Controle Multi-Aquário</title>\n    <style>\n        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; background-color: #f0f2f5; }\n        .container { \n            display: flex; \n            justify-content: center; \n            gap: 20px;\n            flex-wrap: wrap;\n        }\n        .card { \n            background: white; \n            padding: 25px; \n            border-radius: 15px; \n            box-shadow: 0 4px 15px rgba(0,0,0,0.1); \n            width: 300px; \n        }\n        h1 { color: #2c3e50; width: 100%; margin-bottom: 30px;}\n        h2 { color: #3498db; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }\n        input { padding: 10px; margin: 10px 0; font-size: 16px; width: 80%; border: 1px solid #ddd; border-radius: 5px; }\n        button { \n            padding: 12px 30px; \n            background-color: #2ecc71; \n            color: white; \n            border: none; \n            border-radius: 25px;\n            cursor: pointer; \n            font-size: 18px; \n            font-weight: bold;\n            margin-top: 20px;\n            transition: background 0.3s;\n        }\n        button:hover { background-color: #27ae60; }\n        .status { margin-top: 15px; color: #7f8c8d; font-size: 0.9em; }\n        .emoji { font-size: 2em; margin-bottom: 10px; display: block; }\n        .note { font-size: 0.8em; color: #999; margin-top: -5px; margin-bottom: 10px; display: block;}\n    </style>\n</head>\n<body>\n    <h1>🐟 Sistema de Gestão de Aquicultura</h1>\n    <form action=\"/salvar-horario\" method=\"post\">\n        <div class=\"container\">\n            \n            <div class=\"card\">\n                <span class=\"emoji\">🐠</span>\n                <h2>Aquário 1</h2>\n                <label>Horário 1:</label>\n                <input type=\"time\" name=\"aq1_t1\" value=\"{{aq1_t1}}\">\n                \n                <label>Horário 2:</label>\n                <input type=\"time\" name=\"aq1_t2\" value=\"{{aq1_t2}}\">\n                <span class=\"note\">(Deixe em branco se não usar)</span>\n                \n                <div class=\"status\">Atual: {{aq1_t1}} | {{aq1_t2}}</div>\n            </div>\n\n            \n            <div class=\"card\">\n                <span class=\"emoji\">🐡</span>\n                <h2>Aquário 2</h2>\n                <label>Horário 1:</label>\n                <input type=\"time\" name=\"aq2_t1\" value=\"{{aq2_t1}}\">\n                \n                <label>Horário 2:</label>\n                <input type=\"time\" name=\"aq2_t2\" value=\"{{aq2_t2}}\">\n                <span class=\"note\">(Deixe em branco se não usar)</span>\n\n                <div class=\"status\">Atual: {{aq2_t1}} | {{aq2_t2}}</div>\n            </div>\n        </div>\n        <button type=\"submit\">💾 Salvar Configurações</button>\n    </form>\n</body>\n</html>",
+        "output": "str",
+        "x": 350,
+        "y": 500,
+        "wires": [
+            [
+                "2293ba481dbb2717"
+            ]
+        ]
+    },
+    {
+        "id": "2293ba481dbb2717",
+        "type": "http response",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c9a7397bbf29d187",
+        "type": "http in",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "POST /salvar-horario",
+        "url": "/salvar-horario",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "d3a6f3f35a2e99c7"
+            ]
+        ]
+    },
+    {
+        "id": "d3a6f3f35a2e99c7",
+        "type": "function",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "Salvar (Ignorar Vazios)",
+        "func": "// Pega os dados do formulário\nvar aq1_t1 = msg.payload.aq1_t1 || \"\";\nvar aq1_t2 = msg.payload.aq1_t2 || \"\";\nvar aq2_t1 = msg.payload.aq2_t1 || \"\";\nvar aq2_t2 = msg.payload.aq2_t2 || \"\";\n\n// Salva na memória do fluxo\nflow.set(\"aq1_t1\", aq1_t1);\nflow.set(\"aq1_t2\", aq1_t2);\nflow.set(\"aq2_t1\", aq2_t1);\nflow.set(\"aq2_t2\", aq2_t2);\n\n// Responde ao navegador\nmsg.payload = \"<h1>Configuração Salva!</h1>\" +\n              \"<p>Os horários vazios foram ignorados.</p>\" +\n              \"<br><a href='/config'>Voltar ao Painel</a>\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "0a16a4d8238e5639"
+            ]
+        ]
+    },
+    {
+        "id": "0a16a4d8238e5639",
+        "type": "http response",
+        "z": "42771e3664113772",
+        "g": "8f41bd8f41153558",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b3e65c56453c4c2a",
+        "type": "inject",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "A cada 60s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 790,
+        "y": 500,
+        "wires": [
+            [
+                "be416fa46e7e74da"
+            ]
+        ]
+    },
+    {
+        "id": "be416fa46e7e74da",
+        "type": "function",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "Verificar (Se Existir)",
+        "func": "// Pega hora atual\nvar now = new Date();\nvar hours = String(now.getHours()).padStart(2, '0');\nvar minutes = String(now.getMinutes()).padStart(2, '0');\nvar currentTime = hours + \":\" + minutes;\n\n// --- AQUÁRIO 1 ---\nvar aq1_t1 = flow.get(\"aq1_t1\");\nvar aq1_t2 = flow.get(\"aq1_t2\");\nvar msgAq1 = null;\n\n// Só dispara se a variável NÃO for vazia E bater com a hora\nif ( (aq1_t1 && currentTime === aq1_t1) || (aq1_t2 && currentTime === aq1_t2) ) {\n    msgAq1 = { \n        payload: \"feed\", \n        topic: \"aquario1\" \n    };\n}\n\n// --- AQUÁRIO 2 ---\nvar aq2_t1 = flow.get(\"aq2_t1\");\nvar aq2_t2 = flow.get(\"aq2_t2\");\nvar msgAq2 = null;\n\nif ( (aq2_t1 && currentTime === aq2_t1) || (aq2_t2 && currentTime === aq2_t2) ) {\n    msgAq2 = { \n        payload: \"feed\", \n        topic: \"aquario2\" \n    };\n}\n\nreturn [msgAq1, msgAq2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 500,
+        "wires": [
+            [
+                "43ba30b98d394605",
+                "957b7290a1230eca"
+            ],
+            [
+                "b35f5c411211348a",
+                "957b7290a1230eca"
+            ]
+        ]
+    },
+    {
+        "id": "43ba30b98d394605",
+        "type": "mqtt out",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "CMD Aq1",
+        "topic": "aquario1/alimentar",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b3f3a8b4.a6f998",
+        "x": 1260,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b35f5c411211348a",
+        "type": "mqtt out",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "CMD Aq2",
+        "topic": "aquario2/alimentar",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b3f3a8b4.a6f998",
+        "x": 1260,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "049a2d67fccd6c15",
+        "type": "function",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "Formatar Notificação",
+        "func": "var origin = msg.topic; // \"aquario1\" ou \"aquario2\"\n\nvar temp, ph, emoji, nome;\n\nif (origin === \"aquario1\") {\n    nome = \"Aquário 1\";\n    emoji = \"🐠\";\n    temp = flow.get(\"aquario1_temp\") || \"--\";\n    ph = flow.get(\"aquario1_ph\") || \"--\";\n} else if (origin === \"aquario2\") {\n    nome = \"Aquário 2\";\n    emoji = \"🐡\";\n    temp = flow.get(\"aquario2_temp\") || \"--\";\n    ph = flow.get(\"aquario2_ph\") || \"--\";\n} else {\n    return null; // Erro de segurança\n}\n\nmsg.payload = emoji + \" *Alimentação Realizada!*\\n\\n\" +\n              \"📦 \" + nome + \"\\n\" +\n              \"🌡️ Temp: \" + temp + \" °C\\n\" +\n              \"💧 pH: \" + ph + \"\\n\\n\" +\n              \"✅ Sistema operou com sucesso.\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 660,
+        "wires": [
+            [
+                "8357ae811a27833f"
+            ]
+        ]
+    },
+    {
+        "id": "8357ae811a27833f",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "",
+        "credtype": "account",
+        "account": "f6406b456273156b",
+        "text": "payload",
+        "phonenumbervalue": "",
+        "apikeyvalue": "",
+        "apikeyinputtypemessage": "msg",
+        "phonenumberinputtypemessage": "msg",
+        "inputtypemessage": "msg",
+        "rejectssl": false,
+        "x": 1270,
+        "y": 660,
+        "wires": [
+            [
+                "f73c065a44299311"
+            ]
+        ]
+    },
+    {
+        "id": "f73c065a44299311",
+        "type": "debug",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "WhatsApp Enviado",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "957b7290a1230eca",
+        "type": "link in",
+        "z": "42771e3664113772",
+        "g": "b657e2b9524d0999",
+        "name": "Gatilho Notificação",
+        "links": [],
+        "x": 915,
+        "y": 660,
+        "wires": [
+            [
+                "049a2d67fccd6c15"
+            ]
+        ]
+    },
+    {
+        "id": "b3f3a8b4.a6f998",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Public",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dcb5e55b929bb223",
+        "type": "influxdb",
+        "hostname": "",
+        "port": "",
+        "database": "",
+        "name": "InfluxDB Cloud Aquario",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "https://us-east-1-1.aws.cloud2.influxdata.com",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "f6406b456273156b",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": "WhatsApp API Account"
+    },
+    {
+        "id": "25b6d478640a9cb5",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0",
+            "node-red-contrib-whatsapp-cmb": "1.0.3"
+        }
+    }
+]
