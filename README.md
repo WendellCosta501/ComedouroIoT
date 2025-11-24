@@ -50,15 +50,11 @@ Alertas: Tabela de "Problemas Ocorridos" que filtra e exibe apenas os registros 
 O sistema alcança os seguintes resultados:
 
 Consistência e Redução de Poluição: Garante a regularidade da dieta e minimiza o desperdício de ração.
+Escalabilidade (B2C/B2B): A arquitetura MQTT com tópicos distintos permite gerenciar desde o aquário doméstico até múltiplos ativos corporativos.
+Rastreabilidade: Todos os eventos de alimentação e medições são registrados no InfluxDB para análise histórica e suporte à decisão.
 
 Integrantes:
 - Ali Ahmad
 - Lucas Souza Santos
 - Lucas Lacerda
 - Wendell Rodrigues da Costa
-
-
-Escalabilidade (B2C/B2B): A arquitetura MQTT com tópicos distintos permite gerenciar desde o aquário doméstico até múltiplos ativos corporativos.
-
-
-Rastreabilidade: Todos os eventos de alimentação e medições são registrados no InfluxDB para análise histórica e suporte à decisão.
