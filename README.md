@@ -51,6 +51,13 @@ O sistema alcança os seguintes resultados:
 
 Consistência e Redução de Poluição: Garante a regularidade da dieta e minimiza o desperdício de ração.
 
+Integrantes:
+- Ali Ahmad
+- Lucas Souza Santos
+- Lucas Lacerda
+- Wendell Rodrigues da Costa
+
+
 Escalabilidade (B2C/B2B): A arquitetura MQTT com tópicos distintos permite gerenciar desde o aquário doméstico até múltiplos ativos corporativos.
 
 
